@@ -2,8 +2,8 @@
 var app = angular.module("app", ["xeditable","ngCookies"]);
 
 app.controller('NodeCtrl', ['$scope','$http','$cookies', function($scope,$http,$cookies) {
-  var keyPrefix = '/v2/keys',
-      statsPrefix = '/v2/stats';
+  var keyPrefix = 'v2/keys',
+      statsPrefix = 'v2/stats';
 
   if($cookies.urlPrefix){
     $scope.urlPrefix = $cookies.urlPrefix;
@@ -12,8 +12,7 @@ app.controller('NodeCtrl', ['$scope','$http','$cookies', function($scope,$http,$
   }
 
   $scope.getPrefix = function() {
-    splitted = $scope.urlPrefix.split("/")
-    return splitted[0] + "//" + splitted[2]
+    return '';
   }
 
 
